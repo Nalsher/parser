@@ -11,7 +11,8 @@ def write_csv(data):
                          data['supplier'],
                          data['cost'],
                         data['url']])
-names = []
+
+
 
 def get_data(url):
     div = rq.get(url).text
@@ -27,5 +28,8 @@ def get_data(url):
                     'supplier':supplier,
                     'url':url}
         write_csv(lastdata)
+
+
+
 for i in range(1,11):
     print(get_data(f"https://catalog.wb.ru/catalog/bl_shirts/catalog?TestGroup=sim_goods_srch_infra&TestID=323&appType=1&cat=8126&curr=rub&dest=-1257786&page={i}&sort=popular&spp=25"))
